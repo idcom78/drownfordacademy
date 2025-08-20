@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Reader | Drownford</title>
+    <meta name="description" content="Engage in a distraction-free learning experience.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/app.js" defer></script>
+</head>
+<body class="course-reader-page">
+    <div id="reading-progress-bar"></div>
+    <header class="site-header sticky">
+        <div class="container header-container">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <button class="btn btn-icon" id="sidebar-toggle" aria-label="Toggle lesson sidebar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M3.75 6.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 010-1.5zM3.75 12h16.5a.75.75 0 010 1.5H3.75a.75.75 0 010-1.5zM3.75 17.25h16.5a.75.75 0 010 1.5H3.75a.75.75 0 010-1.5z"></path></svg>
+                </button>
+                <a href="./courses.html" class="logo" aria-label="Back to Courses">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><path d="M16 0L32 16L16 32L0 16L16 0Z" fill="var(--primary)"/><path d="M16.0002 9.6001L22.4002 16.0001L16.0002 22.4001L9.6002 16.0001L16.0002 9.6001Z" fill="white"/></svg>
+                    <span class="hidden-mobile">Drownford</span>
+                </a>
+            </div>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn btn-icon" aria-label="Toggle light/dark mode">
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.592a.75.75 0 01-1.06-1.061l1.59-1.591a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM17.836 17.836a.75.75 0 011.06 0l1.591 1.591a.75.75 0 11-1.06 1.06l-1.591-1.59a.75.75 0 010-1.06zM12 21.75a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0v2.25a.75.75 0 01-.75.75zM5.106 17.836a.75.75 0 010-1.06l1.591-1.591a.75.75 0 111.061 1.06l-1.591 1.591a.75.75 0 01-1.06 0zM2.25 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3a.75.75 0 01-.75-.75zM6.106 5.106a.75.75 0 011.06 0l1.591 1.591a.75.75 0 01-1.06 1.061L5.106 6.167a.75.75 0 010-1.06z" /></svg>
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-3.833 2.067-7.172 5.231-8.94a.75.75 0 01.819.162z" clip-rule="evenodd" /></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="course-reader-layout">
+        <aside class="course-sidebar" id="course-sidebar">
+            <div class="course-sidebar-header">
+                <h4 id="sidebar-course-title">Loading Course...</h4>
+                <p><a href="./courses.html" class="link">Back to all courses</a></p>
+            </div>
+            <nav>
+                <ul class="lesson-list" id="lesson-list">
+                    <!-- Lessons populated by JS -->
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content-area" id="main-content-area">
+            <article>
+                <header class="reader-header" id="reader-header">
+                    <!-- Header populated by JS -->
+                    <div class="skeleton skeleton-line w-75" style="height: 2.5em; margin-bottom: 1em;"></div>
+                    <div class="skeleton skeleton-line w-50"></div>
+                </header>
+
+                <div class="reader-content" id="reader-content">
+                    <!-- Content populated by JS -->
+                    <div class="skeleton skeleton-line"></div>
+                    <div class="skeleton skeleton-line"></div>
+                    <div class="skeleton skeleton-line w-75"></div>
+                    <br>
+                    <div class="skeleton skeleton-line"></div>
+                    <div class="skeleton skeleton-line w-50"></div>
+                </div>
+
+                <section class="quiz-section" id="quiz-section">
+                    <!-- Quiz populated by JS -->
+                </section>
+            </article>
+            
+            <nav class="lesson-navigation" style="display: flex; justify-content: space-between; margin-top: 48px;">
+                <button id="prev-lesson-btn" class="btn btn-secondary">Previous</button>
+                <button id="next-lesson-btn" class="btn btn-primary">Next Lesson</button>
+            </nav>
+        </main>
+    </div>
+
+    <div class="reader-actions">
+        <button id="font-size-decrease" class="btn btn-icon" aria-label="Decrease font size">A-</button>
+        <button id="font-size-increase" class="btn btn-icon" aria-label="Increase font size">A+</button>
+        <button id="focus-mode-toggle" class="btn btn-icon" aria-label="Toggle focus mode">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113C21.185 17.024 16.97 20.25 12 20.25c-4.97 0-9.185-3.223-10.675-7.69a.962.962 0 010-1.113zM12 15a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>
+        </button>
+        <button id="notes-toggle" class="btn btn-icon" aria-label="Toggle notes panel">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M5.055 7.06c-1.25-.714-2.554 1.158-1.544 2.022l1.01 1.011c.21.21.45.364.72.468l.27.102a.75.75 0 01.365 1.118l-1.075 1.076a.75.75 0 000 1.06l1.06 1.06a.75.75 0 001.06 0l1.076-1.075a.75.75 0 011.118.365l.102.27c.104.27.258.51.468.72l1.011 1.01c.864 1.01 2.736-.294 2.022-1.544l-1.028-1.886a25.13 25.13 0 00-3.15-4.444c-1.15-1.423-2.73-2.82-4.444-3.15L5.055 7.061z"></path><path d="M15.75 7.5a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5a.75.75 0 01.75-.75z"></path><path d="M18.232 4.232a.75.75 0 011.06 0l.708.707a.75.75 0 010 1.06l-.707.708a.75.75 0 01-1.06 0l-.708-.707a.75.75 0 010-1.06l.707-.707z"></path></svg>
+        </button>
+    </div>
+
+    <aside class="notes-panel" id="notes-panel">
+        <h4>My Notes</h4>
+        <p style="font-size: 0.9rem; color: var(--text-secondary);">Your notes are saved automatically.</p>
+        <textarea id="notes-textarea" class="form-input" placeholder="Start typing your notes for this lesson..."></textarea>
+    </aside>
+
+    <div id="toast-container"></div>
+</body>
+</html>

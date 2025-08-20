@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+    README: Drownford Quick Start
+    --------------------------------
+    - To run, open this `index.html` file in a browser.
+    - Course data is loaded from `/data/courses.json`.
+    - Interactivity is handled by `/assets/js/app.js`.
+    - Styling is in `/assets/css/styles.css`.
+    - User data is saved in localStorage.
+    -->
+    <title>Drownford | Learn Smart. Learn Simply.</title>
+    <meta name="description" content="Drownford offers beautiful, text-based courses with quizzes and progress tracking. A simple, distraction-free way to learn online.">
+    
+    <!-- SEO & Social Meta Tags -->
+    <meta property="og:title" content="Drownford | Learn Smart. Learn Simply.">
+    <meta property="og:description" content="A better way to learn online through text-based courses.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://drownford.example.com">
+    <meta property="og:image" content="https://drownford.example.com/assets/img/social-preview.png"> <!-- Placeholder -->
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/app.js" defer></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Drownford",
+      "url": "https://drownford.example.com",
+      "logo": "https://drownford.example.com/assets/img/logo.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "url": "https://drownford.example.com/contact.html"
+      }
+    }
+    </script>
+</head>
+<body>
+    <div id="reading-progress-bar"></div>
+    <header class="site-header sticky">
+        <div class="container header-container">
+            <a href="./index.html" class="logo" aria-label="Drownford Home">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                    <path d="M16 0L32 16L16 32L0 16L16 0Z" fill="var(--primary)"/>
+                    <path d="M16.0002 9.6001L22.4002 16.0001L16.0002 22.4001L9.6002 16.0001L16.0002 9.6001Z" fill="white"/>
+                </svg>
+                <span>Drownford</span>
+            </a>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="./index.html" class="nav-link active">Home</a></li>
+                    <li><a href="./courses.html" class="nav-link">Courses</a></li>
+                    <li><a href="./about.html" class="nav-link">About</a></li>
+                    <li><a href="./contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn btn-icon" aria-label="Toggle light/dark mode">
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.592a.75.75 0 01-1.06-1.061l1.59-1.591a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM17.836 17.836a.75.75 0 011.06 0l1.591 1.591a.75.75 0 11-1.06 1.06l-1.591-1.59a.75.75 0 010-1.06zM12 21.75a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0v2.25a.75.75 0 01-.75.75zM5.106 17.836a.75.75 0 010-1.06l1.591-1.591a.75.75 0 111.061 1.06l-1.591 1.591a.75.75 0 01-1.06 0zM2.25 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3a.75.75 0 01-.75-.75zM6.106 5.106a.75.75 0 011.06 0l1.591 1.591a.75.75 0 01-1.06 1.061L5.106 6.167a.75.75 0 010-1.06z" /></svg>
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-3.833 2.067-7.172 5.231-8.94a.75.75 0 01.819.162z" clip-rule="evenodd" /></svg>
+                </button>
+                <a href="#" class="btn btn-secondary hidden-mobile">Sign In</a>
+                <a href="./courses.html" class="btn btn-primary hidden-mobile">Browse Courses</a>
+                <button class="btn btn-icon mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M3.75 6.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 010-1.5zM3.75 12h16.5a.75.75 0 010 1.5H3.75a.75.75 0 010-1.5zM3.75 17.25h16.5a.75.75 0 010 1.5H3.75a.75.75 0 010-1.5z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav-panel" id="mobile-nav-panel">
+        <nav aria-label="Mobile Navigation">
+            <ul class="nav-list">
+                <li><a href="./index.html" class="nav-link active">Home</a></li>
+                <li><a href="./courses.html" class="nav-link">Courses</a></li>
+                <li><a href="./about.html" class="nav-link">About</a></li>
+                <li><a href="./contact.html" class="nav-link">Contact</a></li>
+                <li><a href="#" class="nav-link">Sign In</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Learn Smart. Learn Simply.</h1>
+                <p class="subtext">The distraction-free, reading-first platform for deep learning. Master new skills through beautifully crafted text-based courses, interactive quizzes, and powerful study tools.</p>
+                <div class="hero-actions">
+                    <a href="./courses.html" class="btn btn-primary">Start Learning</a>
+                    <a href="#featured-courses" class="btn btn-secondary">Browse Courses</a>
+                </div>
+                <div class="hero-illustration" aria-hidden="true">
+                    <svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="40" y="50" width="320" height="120" rx="20" fill="#1E293B"/>
+                        <path d="M60 70H200" stroke="#3B82F6" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M60 85H280" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M60 100H250" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M60 115H180" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+                        <rect x="250" y="130" width="90" height="20" rx="10" fill="#22C55E"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="section features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.5a.75.75 0 00.5.707c1.728.42 3.522.555 5.25.555 2.134 0 4.032-.255 5.75-.708v-6.82a.75.75 0 00-.648-.743 8.97 8.97 0 01-1.102-.11zM12.75 4.533c1.121-.244 2.29-.42 3.5-.523a.75.75 0 01.75.748v14.5a.75.75 0 01-.5.707c-1.728.42-3.522.555-5.25.555-2.134 0-4.032-.255-5.75-.708V18.25a.75.75 0 01.648-.743 8.97 8.97 0 001.102-.11V4.533z"></path></svg>
+                        </div>
+                        <h4>Learn by Reading</h4>
+                        <p>Our courses are designed for focused, deep reading, the most effective way to learn complex topics.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9 4.5a.75.75 0 01.75.75v13.5a.75.75 0 01-1.5 0V5.25A.75.75 0 019 4.5zm6.53 1.03a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-2.25-2.25a.75.75 0 011.06-1.06L9.75 9.69l3.97-3.97a.75.75 0 011.06 0z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <h4>Instant Quizzes</h4>
+                        <p>Test your knowledge at the end of each lesson with interactive quizzes and immediate feedback.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.484 2.17a.75.75 0 011.032 0 11.209 11.209 0 014.328 4.653.75.75 0 01-.318.982l-3.03 1.515a.75.75 0 01-.91-.103 6.714 6.714 0 00-5.168 0 .75.75 0 01-.91.103l-3.03-1.515a.75.75 0 01-.318-.982A11.21 11.21 0 0111.484 2.17zM12 12.375a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zM12.375 13.5a.375.375 0 00-.75 0v2.625H9.375a.375.375 0 000 .75h2.25V18a.375.375 0 00.75 0v-1.125h2.25a.375.375 0 000-.75h-2.25V13.5z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <h4>Track Progress</h4>
+                        <p>Visually track your completion for every course and lesson, picking up right where you left off.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.339 2.474a.75.75 0 00-1.022.212l-2.1 2.94a.75.75 0 00.51.124h4.226a.75.75 0 00.51-.124l-2.1-2.94a.75.75 0 00-.212-.212zM12 1.5a2.25 2.25 0 012.121 1.519l2.1 2.94a2.25 2.25 0 01-1.53 3.481H9.309a2.25 2.25 0 01-1.53-3.481l2.1-2.94A2.25 2.25 0 0112 1.5z"></path><path fill-rule="evenodd" d="M12 21a8.25 8.25 0 100-16.5 8.25 8.25 0 000 16.5zM9.655 12.243a.75.75 0 01.298-1.013l3-1.75a.75.75 0 11.744 1.28l-1.648.961 1.648.962a.75.75 0 01-.744 1.28l-3-1.75a.75.75 0 01-.298-.26z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <h4>Offline Ready</h4>
+                        <p>No internet? No problem. Drownford is built to work offline, so you can learn anytime, anywhere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-courses" class="section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 48px;">Featured Courses</h2>
+                <div class="courses-grid" id="featured-courses-grid">
+                    <!-- Skeleton loaders -->
+                    <div class="course-card skeleton-card" aria-hidden="true">
+                        <div class="card-hero skeleton"></div>
+                        <div class="card-content">
+                            <div class="skeleton skeleton-line w-75"></div>
+                            <div class="skeleton skeleton-line w-50"></div>
+                            <div class="skeleton skeleton-line"></div>
+                            <div class="skeleton skeleton-line"></div>
+                        </div>
+                    </div>
+                    <div class="course-card skeleton-card" aria-hidden="true">
+                        <div class="card-hero skeleton"></div>
+                        <div class="card-content">
+                            <div class="skeleton skeleton-line w-75"></div>
+                            <div class="skeleton skeleton-line w-50"></div>
+                            <div class="skeleton skeleton-line"></div>
+                            <div class="skeleton skeleton-line"></div>
+                        </div>
+                    </div>
+                    <div class="course-card skeleton-card" aria-hidden="true">
+                        <div class="card-hero skeleton"></div>
+                        <div class="card-content">
+                            <div class="skeleton skeleton-line w-75"></div>
+                            <div class="skeleton skeleton-line w-50"></div>
+                            <div class="skeleton skeleton-line"></div>
+                            <div class="skeleton skeleton-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section testimonials">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 48px;">Loved by Students</h2>
+                <div class="testimonial-strip">
+                    <div class="testimonial-card">
+                        <blockquote>Drownford's text-first approach is a game-changer. I can finally focus and actually absorb the material without distracting videos.</blockquote>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/48?u=1" alt="Avatar of Sarah L.">
+                            <div class="author-info">
+                                <strong>Sarah L.</strong>
+                                <span>Software Engineer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <blockquote>The simplicity is its greatest strength. It's clean, fast, and the notes feature is incredibly useful for revision. Better than any other platform I've used.</blockquote>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/48?u=2" alt="Avatar of Mike R.">
+                            <div class="author-info">
+                                <strong>Mike R.</strong>
+                                <span>University Student</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <blockquote>I love that I can learn on my commute. The mobile experience is flawless and it works perfectly offline. Highly recommended.</blockquote>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/48?u=3" alt="Avatar of Chloe T.">
+                            <div class="author-info">
+                                <strong>Chloe T.</strong>
+                                <span>Product Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <blockquote>The courses are concise and well-structured. The quizzes ensure I've understood the concepts before moving on. It's the perfect learning loop.</blockquote>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/48?u=4" alt="Avatar of David K.">
+                            <div class="author-info">
+                                <strong>David K.</strong>
+                                <span>Data Analyst</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section">
+            <div class="container">
+                <h2>Create your study routine with Drownford.</h2>
+                <p>Start your learning journey today and discover a simpler, smarter way to gain new skills.</p>
+                <a href="./courses.html" class="btn btn-primary">Get Started for Free</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="./index.html" class="logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><path d="M16 0L32 16L16 32L0 16L16 0Z" fill="var(--primary)"/><path d="M16.0002 9.6001L22.4002 16.0001L16.0002 22.4001L9.6002 16.0001L16.0002 9.6001Z" fill="white"/></svg>
+                        <span>Drownford</span>
+                    </a>
+                    <p>Learn Smart. Learn Simply.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="./courses.html">Courses</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">For Teams</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Stay Updated</h4>
+                    <p>Join our newsletter for new courses and tips.</p>
+                    <form id="newsletter-form" class="newsletter-form" novalidate>
+                        <div class="form-group" style="flex-grow: 1; margin-bottom: 0;">
+                            <label for="newsletter-email" class="sr-only">Email address</label>
+                            <input type="email" id="newsletter-email" class="form-input" placeholder="your@email.com" required>
+                            <div class="form-error">Please enter a valid email.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="padding: 14px;">Go</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Drownford. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="toast-container"></div>
+</body>
+</html>

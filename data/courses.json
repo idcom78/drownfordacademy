@@ -1,0 +1,154 @@
+[
+    {
+      "id": "math-foundations-101",
+      "title": "Mathematical Foundations",
+      "category": "Math",
+      "difficulty": "Beginner",
+      "duration": "6h",
+      "rating": 4.8,
+      "lessons": [
+        {"id": "l1", "title": "Introduction to Number Theory", "duration": "25m"},
+        {"id": "l2", "title": "Algebraic Principles", "duration": "30m"},
+        {"id": "l3", "title": "Geometry Basics", "duration": "45m"},
+        {"id": "l4", "title": "Understanding Probability", "duration": "35m"}
+      ],
+      "heroSvg": "math",
+      "description": "Master the fundamentals of mathematics with text-based lessons, practice questions, and instant feedback."
+    },
+    {
+      "id": "speed-reading-pro",
+      "title": "Speed Reading & Comprehension",
+      "category": "English",
+      "difficulty": "Intermediate",
+      "duration": "4h",
+      "rating": 4.6,
+      "lessons": [
+        {"id": "l1", "title": "Skimming, Scanning, and Scaffolding", "duration": "18m"},
+        {"id": "l2", "title": "Active Reading Techniques", "duration": "22m"},
+        {"id": "l3", "title": "Improving Retention", "duration": "25m"}
+      ],
+      "heroSvg": "english",
+      "description": "Double your reading speed and improve comprehension with guided drills and our unique note-taking system."
+    },
+    {
+      "id": "logical-reasoning-201",
+      "title": "Advanced Logical Reasoning",
+      "category": "Reasoning",
+      "difficulty": "Advanced",
+      "duration": "8h",
+      "rating": 4.9,
+      "lessons": [
+        {"id": "l1", "title": "Deductive vs. Inductive Logic", "duration": "40m"},
+        {"id": "l2", "title": "Identifying Logical Fallacies", "duration": "55m"},
+        {"id": "l3", "title": "Constructing Sound Arguments", "duration": "60m"}
+      ],
+      "heroSvg": "reasoning",
+      "description": "Sharpen your critical thinking skills by deconstructing arguments and solving complex logical puzzles."
+    },
+    {
+      "id": "physics-essentials",
+      "title": "Essentials of Modern Physics",
+      "category": "Science",
+      "difficulty": "Intermediate",
+      "duration": "10h",
+      "rating": 4.7,
+      "lessons": [
+        {"id": "l1", "title": "Classical Mechanics Review", "duration": "50m"},
+        {"id": "l2", "title": "Introduction to Quantum Theory", "duration": "70m"},
+        {"id": "l3", "title": "Einstein's Relativity", "duration": "80m"}
+      ],
+      "heroSvg": "science",
+      "description": "Explore the groundbreaking theories that shape our understanding of the universe, from Newton to Einstein."
+    },
+    {
+      "id": "creative-writing-101",
+      "title": "Creative Writing Workshop",
+      "category": "English",
+      "difficulty": "Beginner",
+      "duration": "5h",
+      "rating": 4.5,
+      "lessons": [
+        {"id": "l1", "title": "Finding Your Voice", "duration": "30m"},
+        {"id": "l2", "title": "Character Development", "duration": "45m"},
+        {"id": "l3", "title": "Plot and Structure", "duration": "50m"}
+      ],
+      "heroSvg": "english",
+      "description": "Unleash your inner storyteller with practical exercises in plot, character, and style."
+    },
+    {
+      "id": "data-structures-intro",
+      "title": "Intro to Data Structures",
+      "category": "Programming",
+      "difficulty": "Intermediate",
+      "duration": "12h",
+      "rating": 4.9,
+      "lessons": [
+        {"id": "l1", "title": "Arrays and Linked Lists", "duration": "60m"},
+        {"id": "l2", "title": "Stacks and Queues", "duration": "60m"},
+        {"id": "l3", "title": "Trees and Graphs", "duration": "90m"}
+      ],
+      "heroSvg": "programming",
+      "description": "Learn the fundamental building blocks of efficient software with clear, concise explanations and examples."
+    },
+    {
+      "id": "history-ancient-civs",
+      "title": "Ancient Civilizations",
+      "category": "History",
+      "difficulty": "Beginner",
+      "duration": "7h",
+      "rating": 4.6,
+      "lessons": [
+          {"id": "l1", "title": "Mesopotamia: The Cradle of Civilization", "duration": "45m"},
+          {"id": "l2", "title": "The Pharaohs of Ancient Egypt", "duration": "50m"},
+          {"id": "l3", "title": "The Greek City-States", "duration": "55m"}
+      ],
+      "heroSvg": "history",
+      "description": "Journey back in time to explore the cultures, innovations, and legacies of the world's first great empires."
+    },
+    {
+      "id": "mindfulness-basics",
+      "title": "Mindfulness and Meditation",
+      "category": "Wellness",
+      "difficulty": "Beginner",
+      "duration": "3h",
+      "rating": 4.9,
+      "lessons": [
+          {"id": "l1", "title": "The Power of the Present Moment", "duration": "20m"},
+          {"id": "l2", "title": "Guided Breathing Exercises", "duration": "25m"},
+          {"id": "l3", "title": "Building a Daily Practice", "duration": "30m"}
+      ],
+      "heroSvg": "wellness",
+      "description": "Reduce stress and improve focus with simple, guided mindfulness techniques you can use anywhere."
+    },
+    {
+      "id": "financial-literacy",
+      "title": "Personal Finance 101",
+      "category": "Finance",
+      "difficulty": "Beginner",
+      "duration": "5h",
+      "rating": 4.7,
+      "lessons": [
+          {"id": "l1", "title": "Budgeting and Saving", "duration": "40m"},
+          {"id": "l2", "title": "Understanding Credit", "duration": "45m"},
+          {"id": "l3", "title": "Introduction to Investing", "duration": "60m"}
+      ],
+      "heroSvg": "finance",
+      "description": "Take control of your financial future by learning the essential principles of money management."
+    },
+    {
+      "id": "python-for-beginners",
+      "title": "Python for Absolute Beginners",
+      "category": "Programming",
+      "difficulty": "Beginner",
+      "duration": "8h",
+      "rating": 4.8,
+      "lessons": [
+          {"id": "l1", "title": "Your First Python Program", "duration": "30m"},
+          {"id": "l2", "title": "Variables and Data Types", "duration": "45m"},
+          {"id": "l3", "title": "Control Flow: Loops and Conditionals", "duration": "60m"}
+      ],
+      "heroSvg": "programming",
+      "description": "Start your programming journey with the world's most popular language, taught in simple, text-based lessons."
+    }
+  ]
+  
